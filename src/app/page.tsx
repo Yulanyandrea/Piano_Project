@@ -1,7 +1,18 @@
-import Image from "next/image";
+"use client"
+import PianoKey from '../componets/PianoKeys';
 
-export default function Home() {
+const Home = () => {
+  
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <main>
+        <section className="piano">
+          <PianoKey noteFrequency={261.63}  /> {/* C4 */}
+          <PianoKey noteFrequency={277.183}  /> 
+        
+        </section>
+      
+    </main>
   );
-}
+};
+
+export default Home;
