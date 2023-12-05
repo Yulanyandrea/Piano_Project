@@ -34,7 +34,15 @@ const config: Config = {
         borderRadius: {
           '4xl': '2rem',
         }
-      }
+      },
+      buttons: {
+        primary: {
+          backgroundColor: 'primary.500',
+          color: 'black',
+          padding: '1rem 2rem',
+          borderRadius: '4px',
+        },
+      },
       
     },
   },

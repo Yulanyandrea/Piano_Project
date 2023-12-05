@@ -1,13 +1,14 @@
 "use client"
 import { useState, useEffect } from 'react';
-import 'tailwindcss/tailwind.css'
+import 'tailwindcss/tailwind.css';
 
 interface PianoKeyProps {
   noteFrequency: number;
   noteName:string;
+  isSharp:boolean;
 }
 
-const PianoKey = ({ noteFrequency,noteName }:PianoKeyProps) => {
+const PianoKey = ({ noteFrequency,noteName, isSharp }:PianoKeyProps) => {
   const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
   useEffect(() => {
     const initAudioContext = () => {
@@ -30,9 +31,12 @@ const PianoKey = ({ noteFrequency,noteName }:PianoKeyProps) => {
   };
 
   return (
-    <>
-      <button className= "bg-white w-60 h-16" onClick={() => playNote(noteFrequency)}>{noteName}</button>
-    </>
+    <section className='bg-white h-10'>
+      { isSharp === true ? <button className= "bg-black w-60 h-5" onClick={() => playNote(noteFrequency)}>{noteName}</button> :
+        <button className= "bg-orange-800 w-60 h-16" onClick={() => playNote(noteFrequency)}>{noteName}</button>
+      }
+      
+    </section>
    
   );
 };
