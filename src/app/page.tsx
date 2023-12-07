@@ -22,17 +22,17 @@ const Home = () => {
   return (
     <main className='bg-lime-200 w-30 h-80'>
       <p className='bg-gray h-12 text-center text-orange-600 pt-8 pb-20'>Synthesizer</p>
-       <section  className= "flex justify-center mx-0 my-0 w-30 h-20 items-center">
+        <section  className= "flex justify-center mx-0 my-0 w-30 h-20 items-center">
           
           {notesValues.map(([key, value]) => (
             
               <PianoKey key={value} noteFrequency={value} noteName={key} isSharp={sharpNotes.includes(key) } variation="primary"/> 
 
           ))}
-       </section>
+        </section>
         
       
-    </main>
+    </main> 
   );
 };
 
