@@ -7,7 +7,7 @@ interface PianoKeyProps {
   noteFrequency: number;
   noteName:string;
   isSharp:boolean;
-  signal:OscillatorType;
+  signal:string;
   
 }
 
@@ -25,7 +25,7 @@ const PianoKey = ({ noteFrequency,noteName, isSharp,signal}:PianoKeyProps) => {
   const playNote = (noteFrequency: number) => {
     if (audioContext) {
       const oscillator = audioContext.createOscillator();
-      oscillator.type = signal;
+      oscillator.type = signal as OscillatorType;
       oscillator.frequency.setValueAtTime(noteFrequency, audioContext.currentTime);
       oscillator.connect(audioContext.destination);
       oscillator.start();

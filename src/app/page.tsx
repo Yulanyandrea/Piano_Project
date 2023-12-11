@@ -1,8 +1,10 @@
 "use client"
+import { useState } from 'react';
 import PianoKey from '../componets/pianoKey/PianoKeys';
 import Selector from '@/componets/selector/Selector';
 
 const Home = () => {
+  const [wave, setWave] = useState('')
   let notesObj = {
     "C": 261.63,
     "C#":277.183,
@@ -19,21 +21,25 @@ const Home = () => {
   }
   const sharpNotes = ["C#", "D#", "F#", "G#", "A#"];
   let notesValues = Object.entries(notesObj);
+
+  const handleChangeWave = (waveform:string) => {
+    setWave(waveform)
+  }
   
   return (
     <main className='bg-lime-200 w-30 h-80'>
         <p className='bg-gray h-12 text-center text-orange-600 pt-8 pb-20'>Synthesizer</p>
         <section className='flex  justify-around'>
           <section  className= "flex justify-center mx-0 my-0 w-30 h-20 items-center">
-            
+            <Selector valueChange={handleChangeWave}/>
             {notesValues.map(([key, value]) => (
               
-                <PianoKey key={value} noteFrequency={value} noteName={key} isSharp={sharpNotes.includes(key)} signal={"triangle"}  /> 
+                <PianoKey key={value} noteFrequency={value} noteName={key} isSharp={sharpNotes.includes(key)} signal={wave}  /> 
 
             ))}
           </section>
           
-        <Selector/>
+        
 
       </section>
       
