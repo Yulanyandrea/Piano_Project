@@ -7,10 +7,11 @@ interface PianoKeyProps {
   noteFrequency: number;
   noteName:string;
   isSharp:boolean;
-  variation: "primary" | "secondary" | "tertiary";
+  signal:string;
+  
 }
 
-const PianoKey = ({ noteFrequency,noteName, isSharp,variation }:PianoKeyProps) => {
+const PianoKey = ({ noteFrequency,noteName, isSharp,signal}:PianoKeyProps) => {
   const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
   useEffect(() => {
     const initAudioContext = () => {
@@ -24,7 +25,7 @@ const PianoKey = ({ noteFrequency,noteName, isSharp,variation }:PianoKeyProps) =
   const playNote = (noteFrequency: number) => {
     if (audioContext) {
       const oscillator = audioContext.createOscillator();
-      oscillator.type = 'sine';
+      oscillator.type = signal as OscillatorType;
       oscillator.frequency.setValueAtTime(noteFrequency, audioContext.currentTime);
       oscillator.connect(audioContext.destination);
       oscillator.start();
