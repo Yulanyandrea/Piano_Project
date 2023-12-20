@@ -6,7 +6,6 @@ export interface PianoKeys extends mongoose.Document {
   
 }
 
-/* PetSchema will correspond to a collection in your MongoDB database. */
 const PianoKeysSchema = new mongoose.Schema<PianoKeys>({
   note: {
     type: String,
@@ -15,8 +14,8 @@ const PianoKeysSchema = new mongoose.Schema<PianoKeys>({
   },
   frequency: {
     type: Number,
-    required: [true, "Please provide the pet owner's name"],
-    maxlength: [60, "Owner's Name cannot be more than 60 characters"],
+    required: [true, "Please provide the frequency"],
+    maxlength: [60, "It cannot be more than 60 characters"],
   },
 
   
