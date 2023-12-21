@@ -1,10 +1,12 @@
 "use client"
 import { useState } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
 import PianoKey from '../componets/pianoKey/PianoKeys';
 import Selector from '@/componets/selector/Selector';
 
 const Home = () => {
   const [wave, setWave] = useState('')
+  //const getSharpNotes = useSelector((state:any) => state.bankSound)
   let notesObj = {
     "C": 261.63,
     "C#":277.183,
