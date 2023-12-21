@@ -8,6 +8,7 @@ const initialState = {
 
 export const getInstruments = createAsyncThunk('instruments/data', async()=> {
     const res = await getAllInstruments();
+    console.log('res',res)
     return res
 })
 
