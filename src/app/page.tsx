@@ -1,12 +1,16 @@
 "use client"
-import { useState } from 'react';
-import { useDispatch,useSelector } from 'react-redux';
+import { useState,useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PianoKey from '../componets/pianoKey/PianoKeys';
 import Selector from '@/componets/selector/Selector';
+import { useAppDispatch, useAppSelector } from './store/store';
+import { getInstruments } from '../features/piano/pianoSlice'
 
 const Home = () => {
   const [wave, setWave] = useState('')
-  //const getSharpNotes = useSelector((state:any) => state.bankSound)
+  const dispatch = useAppDispatch();
+  const getSharpNotes = useAppSelector((state) => state.pianoKeys.bankSound)
+  console.log(getSharpNotes,'notes')
   let notesObj = {
     "C": 261.63,
     "C#":277.183,
@@ -21,6 +25,9 @@ const Home = () => {
     "A#": 466.164,
     "B":493.883
   }
+  useEffect(()=>{
+    dispatch(getInstruments())
+  },[])
   const sharpNotes = ["C#", "D#", "F#", "G#", "A#"];
   let notesValues = Object.entries(notesObj);
 
