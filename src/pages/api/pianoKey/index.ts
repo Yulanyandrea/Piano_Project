@@ -15,7 +15,7 @@ const handler= async(
       case 'GET':
         try {
           const key = await PianoKeys.find({}) /* find all the data in our database */
-          res.status(200).json({ success: true, data: key })
+          res.status(200).json(key)
         } catch (error) {
           res.status(400).json({ success: false })
         }
