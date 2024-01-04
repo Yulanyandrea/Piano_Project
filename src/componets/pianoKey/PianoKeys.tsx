@@ -34,9 +34,9 @@ const PianoKey = ({ noteFrequency,noteName, isSharp,signal}:PianoKeyProps) => {
   };
 
   return (
-    <section>
-      { isSharp === true ? <button className="bg-black text-white font-bold rounded w-8 h-20" onClick={() => playNote(noteFrequency)}>{noteName}</button> :
-        <button className= "bg-white w-8 h-20 pl-2 rounded"  onClick={() => playNote(noteFrequency)}>{noteName}</button>
+    <section className="flex">
+      { isSharp === true ? <button className="bg-black text-black font-bold rounded w-8 h-20 absolute top-16   z-20  " onClick={() => playNote(noteFrequency)}>{noteName}</button> :
+        <button className= "bg-white  text-white border-solid border-2 border-gray-200 w-10 h-40 pl-2 rounded"  onClick={() => playNote(noteFrequency)}>{noteName}</button>
       }
       
     </section>
