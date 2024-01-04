@@ -14,7 +14,7 @@ const Selector = ({valueChange}:selectorProps) => {
 
     }
     return(
-        <form className="flex flex-col text-center items-baseline">
+        <form className="flex flex-col text-center items-baseline p-4">
 
             <section className="flex flex-row-reverse gap-2 justify-center">
                 <label htmlFor="sine">Sine</label>
