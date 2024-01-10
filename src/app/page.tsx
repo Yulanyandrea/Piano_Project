@@ -4,6 +4,7 @@ import PianoKey from '../componets/pianoKey/PianoKeys';
 import Selector from '@/componets/selector/Selector';
 import { useAppDispatch, useAppSelector } from './store/store';
 import { getInstruments } from '../features/piano/pianoSlice'
+import RecordAudio from '@/componets/buttonRecord/RecordAudio';
 
 const Home = () => {
   const [wave, setWave] = useState('')
@@ -33,6 +34,7 @@ const Home = () => {
               })
             }
           </section>
+          <RecordAudio/>
           
         
 
