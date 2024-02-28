@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk,PayloadAction } from '@reduxjs/toolkit';
 import { getAllInstruments } from './pianoApi';
-import { RootState } from '../../app/store/store';
+import { RootState } from '../../app/redux/store/store';
 
 interface Instruments {
     id: String,
