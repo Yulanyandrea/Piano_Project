@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux'
-import pianoKeyReducer from '../../features/piano/pianoSlice';
+import pianoKeyReducer from '../../../features/piano/pianoSlice';
 
 const store = configureStore({
     reducer:{
