@@ -2,13 +2,13 @@
 
 import { Provider } from 'react-redux';
 import store from '../store/store';
-import Piano from '@/pages/instruments/piano';
+import Page from '../../page';
 import Home from '@/app/page';
 
 const Providers = ({children}:{children:React.ReactNode}) => {
     return (
         <Provider store={store}>{children}
-            <Piano/>
+            <Page/>
         
         </Provider>
     )
