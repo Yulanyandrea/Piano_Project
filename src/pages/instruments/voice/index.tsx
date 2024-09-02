@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
+import ModalText from "@/componets/Modal/ModalText";
 
 const buttonStyle = {
   playIcon:
@@ -18,8 +19,15 @@ const Voice = () => {
     null
   );
   const [chunks, setChunks] = useState<Blob[]>([]);
+  const [modal, setModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setModal(!modal);
+  };
 
   const startRecording = () => {
+    setModal(!modal);
+
     navigator.mediaDevices
       .getUserMedia({ audio: true }) // select audio
       .then((stream) => {
@@ -44,7 +52,7 @@ const Voice = () => {
         });
         const audioUrl = URL.createObjectURL(audioBlob);
 
-        // Reproducir el audio
+        // play audio
         const audioElement = new Audio(audioUrl);
         audioElement.oncanplaythrough = () => {
           audioElement.play();
@@ -94,6 +102,12 @@ const Voice = () => {
           <path fill="currentColor" d={`${buttonStyle.stopIcon}`} />
         </svg>
       </button>
+      <ModalText
+        title={"Start signing"}
+        isOpen={modal}
+        onClose={handleCloseModal}
+      />
+      ;
     </section>
   );
 };

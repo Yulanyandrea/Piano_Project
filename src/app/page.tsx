@@ -16,6 +16,10 @@ const Home = () => {
   const handleClickVoice = () => {
     router.push("/instruments/voice");
   };
+
+  const handleClickDrums = () => {
+    router.push("/instruments/drums");
+  };
   return (
     <main className="flex h-screen justify-center bg-stone-900">
       <section className="flex flex-col justify-center">
@@ -110,6 +114,7 @@ const Home = () => {
         <section className="flex">
           <button
             className={`rounded-md border-green-300 bg-indigo-400 ${buttonStyle.measurement} hover:shadow-xl hover:shadow-green-700 `}
+            onClick={handleClickDrums}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
