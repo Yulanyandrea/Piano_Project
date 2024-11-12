@@ -10,15 +10,15 @@ const Home = () => {
   const router = useRouter();
 
   const handleClickPiano = () => {
-    router.push("/instruments/piano");
+    router.push("/instruments/Piano");
   };
 
   const handleClickVoice = () => {
-    router.push("/instruments/voice");
+    router.push("/instruments/Voice");
   };
 
   const handleClickDrums = () => {
-    router.push("/instruments/drums");
+    router.push("/instruments/Drums");
   };
   return (
     <main className="flex h-screen justify-center bg-stone-900">
