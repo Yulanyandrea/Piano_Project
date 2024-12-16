@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import mongoDb from "../../../lib/mongoDb";
-import PianoKeys from "@/model/model";
+import DrumsKeys from "@/model/Drums.model";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req;
@@ -10,7 +10,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   switch (method) {
     case "GET":
       try {
-        const key = await PianoKeys.find(
+        const key = await DrumsKeys.find(
           {}
         ); /* find all the data in our database */
         res.status(200).json(key);
@@ -20,7 +20,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       break;
     case "POST":
       try {
-        const key = await PianoKeys.create(
+        const key = await DrumsKeys.create(
           req.body
         ); /* create a new model in the database */
         res.status(201).json({ success: true, data: key });
