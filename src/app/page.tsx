@@ -4,16 +4,15 @@ import PianoImage from "@/componets/Images/pianoImage";
 import VoiceImage from "@/componets/Images/VoiceImage";
 import DrumsImage from "@/componets/Images/DrumsImage";
 import GuitarImage from "@/componets/Images/GuitarImage";
-
-const buttonStyle = {
-  measurement:
-    "h-36 w-36 mr-2.5 mb-2.5 flex justify-center items-center border-4 ",
-};
+import ButtonComponent, {
+  ButtonType,
+} from "@/componets/Button/ButtonComponent";
 
 const Home = () => {
   const router = useRouter();
 
   const handleClickPiano = () => {
+    console.log("Botón clicado");
     router.push("/instruments/Piano");
   };
 
@@ -32,37 +31,43 @@ const Home = () => {
       <main className="flex h-screen justify-center bg-stone-900">
         <section className="flex flex-col justify-center">
           <section className="flex">
-            <button
-              className={`rounded-md border-pink-200  bg-indigo-400  ${buttonStyle.measurement} hover:shadow-xl hover:shadow-pink-500`}
-              onClick={handleClickPiano}
-              aria-label="pianoImage"
+            <ButtonComponent
+              ariaLabel="piano"
               role="piano"
+              className={ButtonType.PIANO}
+              onClick={handleClickPiano}
             >
               <PianoImage />
-            </button>
+            </ButtonComponent>
 
-            <button
-              className={`rounded-md border-yellow-500 bg-indigo-400 ${buttonStyle.measurement} hover:shadow-xl hover:shadow-yellow-700`}
-              onClick={handleClickVoice}
+            <ButtonComponent
+              ariaLabel="voice"
               role="voice"
+              className={ButtonType.VOICE}
+              onClick={handleClickVoice}
             >
               <VoiceImage />
-            </button>
+            </ButtonComponent>
           </section>
 
           <section className="flex">
-            <button
-              className={`rounded-md border-green-300 bg-indigo-400 ${buttonStyle.measurement} hover:shadow-xl hover:shadow-green-700 `}
+            <ButtonComponent
+              ariaLabel="drums"
+              role="drums"
+              className={ButtonType.DRUMS}
               onClick={handleClickDrums}
             >
               <DrumsImage />
-            </button>
+            </ButtonComponent>
 
-            <button
-              className={`rounded-md border-cyan-400 bg-indigo-400 ${buttonStyle.measurement} hover:shadow-xl hover:shadow-cyan-700`}
+            <ButtonComponent
+              ariaLabel="guitar"
+              role="guitar"
+              className={ButtonType.GUITAR}
+              onClick={handleClickDrums}
             >
               <GuitarImage />
-            </button>
+            </ButtonComponent>
           </section>
         </section>
       </main>

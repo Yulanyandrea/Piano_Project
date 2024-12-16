@@ -1,53 +1,52 @@
-import { useState, useEffect } from 'react';
-import Selector from '@/componets/selector/Selector';
-import PianoKey from '@/componets/pianoKey/PianoKeys';
-import {getAllInstruments} from '../../../features/piano/pianoApi';
-
+import { useState, useEffect } from "react";
+import Selector from "@/componets/selector/Selector";
+import PianoKey from "@/componets/Sounds/PianoKeys";
+import { getAllInstruments } from "../../../features/piano/pianoApi";
 
 const Piano = () => {
-    const [wave, setWave] = useState('')
-    const [notes, setNotes] = useState([]); 
-    
+  const [wave, setWave] = useState("");
+  const [notes, setNotes] = useState([]);
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await getAllInstruments();
-          setNotes(response);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
-    
-      fetchData();
-    }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getAllInstruments();
+        setNotes(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
- const sharpNotes = ["C#", "D#", "F#", "G#", "A#"];
+    fetchData();
+  }, []);
 
-  const handleChangeWave = (waveform:string) => {
-   setWave(waveform)
-   }
+  const sharpNotes = ["C#", "D#", "F#", "G#", "A#"];
 
- return (
-    <section className='bg-cyan-200 h-screen'>
-        <p className='bg-gray h-12 text-center text-orange-600 pt-8 pb-20'/>
-        <section className='flex  justify-around'>
-          <section  className= "flex justify-center mx-0 my-0 w-30 h-20 items-center">
-            <Selector valueChange={handleChangeWave}/>
-            {
-              notes.map((note:any)=> {
-                return (
-                  <PianoKey key={note._id} noteFrequency={note.frequency} noteName={note.note} isSharp={sharpNotes.includes(note.note)} signal={wave}  /> 
-                )
-              })
-            } 
-          </section>
-          
-          
+  const handleChangeWave = (waveform: string) => {
+    setWave(waveform);
+  };
+
+  return (
+    <section className="h-screen bg-cyan-200">
+      <p className="bg-gray h-12 pb-20 pt-8 text-center text-orange-600" />
+      <section className="flex  justify-around">
+        <section className="w-30 mx-0 my-0 flex h-20 items-center justify-center">
+          <Selector valueChange={handleChangeWave} />
+          {notes.map((note: any) => {
+            return (
+              <PianoKey
+                key={note._id}
+                noteFrequency={note.frequency}
+                noteName={note.note}
+                isSharp={sharpNotes.includes(note.note)}
+                signal={wave}
+              />
+            );
+          })}
+        </section>
       </section>
-      
-    </section> 
- );
+    </section>
+  );
 };
 
 export default Piano;
