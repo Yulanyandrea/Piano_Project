@@ -52,7 +52,7 @@ describe("Piano button", () => {
       </ButtonComponent>
     );
 
-    const button = screen.getByRole("piano");
+    const button = screen.getByRole("button");
 
     fireEvent.click(button);
     expect(mockPush).toHaveBeenCalledWith("/instruments/piano");
