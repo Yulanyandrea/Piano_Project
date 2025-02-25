@@ -26,7 +26,6 @@ export enum ButtonType {
 
 interface ButtonProps {
   ariaLabel: string;
-  role: string;
   className: ButtonType;
   onClick?: () => void;
   children: React.ReactNode;
@@ -39,7 +38,6 @@ const buttonStyle = {
 
 const ButtonComponent = ({
   ariaLabel,
-  role,
   className = ButtonType.PIANO,
   children,
   onClick,
@@ -49,7 +47,7 @@ const ButtonComponent = ({
       <button
         className={`${buttonVariation[className].iconStyle} ${buttonStyle.measurement} ${buttonVariation[className].hover} `}
         aria-label={ariaLabel}
-        role={role}
+        id={ariaLabel} //ID
         onClick={onClick}
       >
         {children}
