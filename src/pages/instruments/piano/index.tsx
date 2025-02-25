@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Selector from "@/componets/selector/Selector";
-import PianoKey from "@/componets/pianoKey/PianoKeys";
+import PianoKey from "@/componets/Keys/PianoKeys";
 import { getAllInstruments } from "../../../features/piano/pianoApi";
 
 const Piano = () => {
