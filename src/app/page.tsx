@@ -12,7 +12,7 @@ const Home = () => {
   const router = useRouter();
 
   const handleClickPiano = () => {
-    console.log("Botón clicado");
+    console.log("click");
     router.push("/instruments/Piano");
   };
 
@@ -33,7 +33,6 @@ const Home = () => {
           <section className="flex">
             <ButtonComponent
               ariaLabel="piano"
-              role="piano"
               className={ButtonType.PIANO}
               onClick={handleClickPiano}
             >
@@ -42,7 +41,6 @@ const Home = () => {
 
             <ButtonComponent
               ariaLabel="voice"
-              role="voice"
               className={ButtonType.VOICE}
               onClick={handleClickVoice}
             >
@@ -53,7 +51,6 @@ const Home = () => {
           <section className="flex">
             <ButtonComponent
               ariaLabel="drums"
-              role="drums"
               className={ButtonType.DRUMS}
               onClick={handleClickDrums}
             >
@@ -62,7 +59,6 @@ const Home = () => {
 
             <ButtonComponent
               ariaLabel="guitar"
-              role="guitar"
               className={ButtonType.GUITAR}
               onClick={handleClickDrums}
             >
