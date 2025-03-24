@@ -12,7 +12,6 @@ const Home = () => {
   const router = useRouter();
 
   const handleClickPiano = () => {
-    console.log("click");
     router.push("/instruments/Piano");
   };
 

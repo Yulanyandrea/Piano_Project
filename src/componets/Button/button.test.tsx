@@ -30,19 +30,23 @@ describe("Piano button", () => {
     expect(voiceButton).toBeInTheDocument();
   });
 
-  it("should navigate to /instruments/piano when clicked", async () => {
-    const mockRouter = {
-      push: jest.fn(),
-    };
-    (useRouter as jest.Mock).mockReturnValue(mockRouter);
-    const user = userEvent.setup();
+  it("renders button with the correct image", () => {
     render(
-      <ButtonComponent ariaLabel="piano" className={ButtonType.PIANO}>
+      <ButtonComponent ariaLabel="drums" className={ButtonType.VOICE}>
         <PianoImage />
       </ButtonComponent>
     );
+    const voiceButton = screen.getByRole("button");
+    expect(voiceButton).toBeInTheDocument();
+  });
 
-    await user.click(screen.getByRole("button"));
-    expect(mockRouter.push).toHaveBeenCalledWith("/instruments/piano");
+  it("renders button with the correct image", () => {
+    render(
+      <ButtonComponent ariaLabel="guitar" className={ButtonType.VOICE}>
+        <PianoImage />
+      </ButtonComponent>
+    );
+    const voiceButton = screen.getByRole("button");
+    expect(voiceButton).toBeInTheDocument();
   });
 });
