@@ -12,12 +12,11 @@ const Home = () => {
   const router = useRouter();
 
   const handleClickPiano = () => {
-    router.push("/instruments/Piano");
-    // create a commit
+    router.push("/instruments/piano");
   };
 
   const handleClickVoice = () => {
-    router.push("/instruments/Voice");
+    router.push("/instruments/voice");
   };
 
   const handleClickDrums = () => {
