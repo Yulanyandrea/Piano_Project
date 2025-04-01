@@ -13,6 +13,7 @@ const Home = () => {
 
   const handleClickPiano = () => {
     router.push("/instruments/Piano");
+    // create a commit
   };
 
   const handleClickVoice = () => {
