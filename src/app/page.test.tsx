@@ -6,8 +6,7 @@ import Home from "./page";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(() => ({
-    // useRouter itself is a mock function that returns an object
-    push: jest.fn(), // push is a mock function
+    push: jest.fn(),
   })),
 }));
 

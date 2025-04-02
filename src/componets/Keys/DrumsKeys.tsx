@@ -1,9 +1,13 @@
 import { useEffect } from "react";
 
-const DrumsKeys = () => {
+interface DrumsProps {
+  sound: string;
+}
+
+const DrumsKeys = ({ sound }: DrumsProps) => {
   useEffect(() => {
     const audioContext = new window.AudioContext(); //  Crea una instancia de AudioContext, que es la base de la Web Audio API.
-    const audio = new Audio("/sounds/kick.wav");
+    const audio = new Audio(`${sound}`);
     audio.play();
   }, []);
 
