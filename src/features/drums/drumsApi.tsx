@@ -1,10 +1,10 @@
 const URL = process.env.NEXT_PUBLIC_API_KEY;
 console.log(URL);
 
-export const getAllInstruments = async () => {
+export const getAllSound = async () => {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/pianoKey"
+      "http://localhost:3000/api/drumPaths"
       //`${URL}/api/pianoKey`
       //"https://piano-project-git-tailwind-yulanyandreas-projects.vercel.app/api/pianoKey"
     );
