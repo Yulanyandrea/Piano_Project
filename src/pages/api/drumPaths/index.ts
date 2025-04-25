@@ -3,6 +3,7 @@ import mongoDb from "../../../lib/mongoDb";
 import DrumsKeys from "@/model/Drums.model";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  // get what is inside data base
   const { method } = req;
 
   await mongoDb();
