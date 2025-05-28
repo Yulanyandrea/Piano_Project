@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import mongoDb from "../../../lib/mongoDb";
-import PianoKeys from "@/model/model";
+import PianoKeys from "@/model/Piano.model";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req;
