@@ -22,6 +22,10 @@ const Home = () => {
   const handleClickDrums = () => {
     router.push("/instruments/Drums");
   };
+
+  const handleClickGuitar = () => {
+    router.push("/instruments/guitar");
+  };
   return (
     <>
       <h1 className=" flex flex-col items-center bg-stone-900 py-4 font-PlayfairDisplay text-4xl  text-white">
@@ -59,7 +63,7 @@ const Home = () => {
             <ButtonComponent
               ariaLabel="guitar"
               className={ButtonType.GUITAR}
-              onClick={handleClickDrums}
+              onClick={handleClickGuitar}
             >
               <GuitarImage />
             </ButtonComponent>
