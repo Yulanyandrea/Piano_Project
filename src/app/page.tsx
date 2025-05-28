@@ -28,7 +28,7 @@ const Home = () => {
   };
   return (
     <>
-      <h1 className=" flex flex-col items-center bg-stone-900 py-4 font-PlayfairDisplay text-4xl  text-white">
+      <h1 className=" flex flex-col items-center bg-stone-900 py-4 text-4xl  text-white">
         Let's create your own music
       </h1>
       <main className="flex h-screen justify-center bg-stone-900">
