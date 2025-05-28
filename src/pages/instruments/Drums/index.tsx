@@ -1,6 +1,14 @@
 import "tailwindcss/tailwind.css";
 import { useEffect, useState } from "react";
 import { getAllSound } from "@/features/drums/drumsApi";
+import objectRandom from "@/features/drums/drumsRandom";
+
+const buttonStyle = {
+  syle1: "bg-teal-200 hover:shadow-xl",
+  style2: "bg-purple-400 hover:shadow-xl",
+  style3: "bg-sky-500 hover:shadow-xl",
+  style4: "bg-green-400 hover:shadow-xl",
+};
 
 const Drums = () => {
   const [sound, setSound] = useState([]);
@@ -23,12 +31,15 @@ const Drums = () => {
     const audioElement = new Audio(soundPath);
     audioElement.play();
   };
+
   return (
-    <section className="flex ">
+    <section className="flex h-screen flex-row items-center justify-center bg-indigo-950">
       {sound.map((drumPath: any) => {
         return (
           <button
-            className="h-40 w-40 border-4  border-solid border-red-300 bg-red-400 hover:shadow-xl hover:shadow-pink-500"
+            className={`h-40 w-40 border-4  border-solid border-red-300 ${objectRandom(
+              buttonStyle
+            )} hover:shadow-pink-500`}
             key={drumPath._id}
             onClick={() => {
               playSound(drumPath.sound);
