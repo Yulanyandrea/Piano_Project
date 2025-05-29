@@ -27,8 +27,8 @@ const Piano = () => {
   };
 
   return (
-    <section className="flex min-h-screen bg-indigo-950">
-      <section className="flex  justify-around">
+    <section className="fixed flex min-h-screen w-full bg-indigo-950  ">
+      <section className="m-auto  flex items-center">
         <section className="w-30 mx-0 my-0 flex h-20 items-center justify-center">
           <Selector valueChange={handleChangeWave} />
           {notes.map((note: any) => {

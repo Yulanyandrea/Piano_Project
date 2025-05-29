@@ -70,10 +70,10 @@ const PianoKey = ({
   };
 
   return (
-    <section className="flex">
+    <section className="relative flex">
       {isSharp === true ? (
         <button
-          className="absolute top-16 z-20 h-20 w-8 rounded bg-black font-bold   text-black  "
+          className="absolute  -top-16 z-20 h-20 w-8 rounded bg-black   font-bold  text-black "
           onClick={() => playNote(noteFrequency)}
         >
           {noteName}
