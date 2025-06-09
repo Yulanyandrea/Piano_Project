@@ -41,6 +41,7 @@ const PianoKey = ({
   };
 
   const pianoSound = () => {
+    // this is to invesetigate a natural piano sound
     if (audioContext) {
       const oscillator = audioContext.createOscillator();
       oscillator.type = "sine";
