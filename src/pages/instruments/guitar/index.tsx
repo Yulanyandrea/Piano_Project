@@ -1,10 +1,9 @@
+import GuitarSelector from "@/componets/selector/GuitarSelector";
+
 const Guitar = () => {
   return (
-    <section>
-      <select name="notes" className="">
-        <option value="C">C</option>
-      </select>
-      <section></section>
+    <section className="">
+      <GuitarSelector />
     </section>
   );
 };
