@@ -1,15 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        serverComponentsExternalPackages: ["mongoose"],
-      },
-      webpack(config) {
-        config.experiments = {
-          ...config.experiments,
-          topLevelAwait: true,
-        }
-        return config
-      }
-}
+  serverExternalPackages: ["mongoose"],
 
-module.exports = nextConfig
+  webpack(config) {
+    config.experiments = {
+      ...config.experiments,
+      topLevelAwait: true,
+    };
+    return config;
+  },
+};
+
+module.exports = nextConfig;
