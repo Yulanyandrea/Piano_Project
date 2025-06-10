@@ -12,7 +12,8 @@ const roboto = Shadows_Into_Light({
 
 export const metadata: Metadata = {
   title: "Create your own music",
-  description: "",
+  description:
+    "This is an we application where the user can play different instruments like piano, drums, guitar and voice. You can practice your music level playing different scales",
   icons: {
     icon: "/icon.svg",
   },
