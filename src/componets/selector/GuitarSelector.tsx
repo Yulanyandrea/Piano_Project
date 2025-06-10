@@ -1,6 +1,8 @@
+import "tailwindcss/tailwind.css";
+
 const GuitarSelector = () => {
   return (
-    <section className="flex">
+    <section className="flex justify-around">
       <select name="notes" className="">
         {/*  add notes */}
 
