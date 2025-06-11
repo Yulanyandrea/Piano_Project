@@ -76,6 +76,7 @@ const Voice = () => {
       <button
         className={`${buttonStyle.buttonAtributes}`}
         onClick={startRecording}
+        aria-label="record your voice"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +92,7 @@ const Voice = () => {
       <button
         className={`${buttonStyle.buttonAtributes}`}
         onClick={stopRecording}
+        aria-label="stop your recording"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
