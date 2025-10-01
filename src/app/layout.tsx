@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import { Shadows_Into_Light } from "next/font/google";
+import { GoogleAnalytic } from "@/analytics/GoogleAnalytic";
 
 const roboto = Shadows_Into_Light({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
+         <GoogleAnalytic />
         <div>{children}</div>
       </body>
     </html>
