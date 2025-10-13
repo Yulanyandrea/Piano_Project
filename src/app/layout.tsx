@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import { Shadows_Into_Light } from "next/font/google";
-import { GoogleAnalytic } from "@/analytics/GoogleAnalytic";
 
 const roboto = Shadows_Into_Light({
   subsets: ["latin"],
@@ -27,8 +26,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+       <head>
+        {/* Google Analytics */}
+         <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WCZ1YYSNC6"
+    ></script>
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-WCZ1YYSNC6');
+        `,
+      }}
+    />
+      </head>
       <body className={roboto.className}>
-         <GoogleAnalytic />
         <div>{children}</div>
       </body>
     </html>

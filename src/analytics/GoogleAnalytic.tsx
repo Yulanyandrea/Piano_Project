@@ -6,8 +6,8 @@ export const GoogleAnalytic = () => {
     <>
       <GoogleAnalytics
         trackPageViews
-        gaMeasurementId="G-WCZ1YYSNC6" // Optional, can be set in .env
-        debugMode={false} // Enable for debugging
+        gaMeasurementId="G-WCZ1YYSNC6"
+        debugMode={false}
       />
     </>
   );
